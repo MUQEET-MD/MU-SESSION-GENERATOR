@@ -7,10 +7,3 @@ function makeid(num = 4) {
   }
   
   return `MUQEET~${result}`;
-}
-
-async function downloadCreds(sessionId) {  
-  try {
-    if (!sessionId.startsWith('MUQEET~')) {
-      throw new Error('Invalid SESSION_ID: It must start with "MUQEET~"');
-    }
