@@ -5,6 +5,12 @@ function makeid(num = 4) {
   for (var i = 0; i < num; i++) {
     result += characters.charAt(Math.floor(Math.random() * characters9));
   }
-  return result;
+  
+  return `MUQEET~${result}`;
 }
-module.exports = {makeid};
+
+async function downloadCreds(sessionId) {  
+  try {
+    if (!sessionId.startsWith('MUQEET~')) {
+      throw new Error('Invalid SESSION_ID: It must start with "MUQEET~"');
+    }
